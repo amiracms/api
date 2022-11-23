@@ -8,10 +8,10 @@ npm install @amira/api
 
 ## Methods
 
-### buildSchema(typeDef: *Array<String>*, resolvers: *Object*, directives: *Array<{name: String, resolve: Function, before: Boolean}*>): GraphQLSchema
+##### buildSchema(typeDef: *Array<String>*, resolvers: *Object*, directives: *Array<{name: String, resolve: Function, before: Boolean}*>): GraphQLSchema
 This is a simple yet powerful method use to generate GraphQL schema. The simplicity focuses on how the parameters are handled. It eliminates the process of creating complex building blocks of code for the type definition, resolvers, and of course directives.
 
-### createHandler({schema: Object, context: Object, onEnd: Function}): Function
+##### createHandler({schema: Object, context: Object, onEnd: Function}): Function
 This is wrapper for **graphql-http** *createHandler* method with custom execution processor which accepts a callback function to further manipulate the return data properties.
 
 ## Usage
