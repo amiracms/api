@@ -13,7 +13,7 @@ const generateSchema = require('./lib/schema');
  * @param {function} onEnd
  * @return {Function}
  **/
-exports.createHttpHandler = function createHttpHandler({
+exports.createHandler = function createHttpHandler({
 	schema,
 	context,
 	onEnd
