@@ -4,7 +4,16 @@ const { createHandler } = require('graphql-http/lib/use/node');
 const executeFn = require('./lib/execute');
 const generateSchema = require('./lib/schema');
 
-exports.setHttpHandler = function setHttpHandler({
+/**
+ * Creates GraphQL request handler.
+ * 
+ * @param {object} schema
+ * 	An object generated
+ * @param {object} context
+ * @param {function} onEnd
+ * @return {Function}
+ **/
+exports.createHttpHandler = function createHttpHandler({
 	schema,
 	context,
 	onEnd
@@ -16,6 +25,14 @@ exports.setHttpHandler = function setHttpHandler({
 	})
 }
 
-exports.buildSchema = function buildSchema(schema, resolvers, directives) {
-	return generateSchema(schema, resolvers, directives);
+/**
+ * Generate schema to use in the http handler.
+ * 
+ * @param {array<String>} typeDefs
+ * @param {object} resolvers
+ * @param {array<{name: String, resolve: Function, before: Boolean}>} directives
+ * @return {Object<GraphQLSchema>}
+ **/
+exports.buildSchema = function buildSchema(typeDefs, resolvers, directives) {
+	return generateSchema(typeDefs, resolvers, directives);
 }
